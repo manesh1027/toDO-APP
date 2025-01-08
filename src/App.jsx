@@ -3,7 +3,7 @@ import Input from "./Components/Input";
 import Button from "./Components/Button";
 import { useState } from "react";
 import Task from "./Components/Task";
-import { appStyle, inputStyle } from "./Styles/styles";
+import { appStyle, inputStyle } from "./Styles/style";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);

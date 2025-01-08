@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import { customButtonStyle, taskStyles } from "../Styles/styles";
+import { customButtonStyle, taskStyles } from "../Styles/style";
 
 const Task = (props) => {
   const { task, index, completeTask, removeTask } = props;
