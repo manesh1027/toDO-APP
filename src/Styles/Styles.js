@@ -1,7 +1,7 @@
 export const appStyle = {
     textAlign: "center",
     // backgroundImage: URL(""),
-    backgroundImage: "url('../assets/img.jpg')" ,
+    backgroundImage: "linear-gradient(#ff9e00 0%,#fbc2eb 100%)" ,
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     padding: "20px",
     // borderRadius: "10px",

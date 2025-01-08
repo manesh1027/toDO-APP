@@ -46,7 +46,7 @@ const App = () => {
       <div
         style={{
           gap: "1em",
-          backgroundColor: "red",
+          
           borderRadius: "15px",
         }}
       >
