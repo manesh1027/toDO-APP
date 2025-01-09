@@ -8,11 +8,18 @@ import { appStyle, inputStyle } from "./Styles/style";
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [visibleTasks, setVisibleTasks] = useState(5);
+  const [showAll, setShowAll] = useState(false);
 
   const addTask = (e) => {
     e.preventDefault();
     if (newTask.trim() !== "") {
-      setTasks([...tasks, { text: newTask, completed: false }]);
+      setTasks((prevTasks) => {
+        const updatedTasks = [...prevTasks, { text: newTask, completed: false }];
+        setVisibleTasks(5);
+        setShowAll(false);
+        return updatedTasks;
+      });
       setNewTask("");
     }
   };
@@ -24,33 +31,46 @@ const App = () => {
   };
 
   const removeTask = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((_, i) => i !== index);
+      return updatedTasks;
+    });
+  };
+
+  const toggleShowTasks = () => {
+    if (showAll) {
+      setVisibleTasks(5);
+    } else {
+      setVisibleTasks(tasks.length);
+    }
+    setShowAll(!showAll);
   };
 
   return (
     <div style={appStyle}>
-      <h1>Todo List</h1>
-      <form onSubmit={addTask}>
+      <h1>
+        Todo List <i className="fas fa-check"></i>
 
+      </h1>
+      <form onSubmit={addTask}>
         <div>
           <Input
             type="text"
             style={inputStyle}
             placeholder="Add a task"
+            value={newTask}
             handleOnChange={(e) => setNewTask(e.target.value)}
           />
-          <Button type="submit" text=">>" />
+          <Button type="submit" text=">>"/>
         </div>
       </form>
       <div
         style={{
           gap: "1em",
-          
           borderRadius: "15px",
         }}
       >
-        {tasks.map((task, index) => {
+        {tasks.slice(0, visibleTasks).map((task, index) => {
           return (
             <Task
               key={index}
@@ -62,6 +82,12 @@ const App = () => {
           );
         })}
       </div>
+      {tasks.length > 5 && (
+        <Button
+          onClick={toggleShowTasks}
+          text={showAll ? "Show Less" : "Show More"}
+        />
+      )}
     </div>
   );
 };

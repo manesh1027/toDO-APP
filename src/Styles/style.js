@@ -1,11 +1,11 @@
 export const appStyle = {
     textAlign: "center",
     // backgroundImage: URL(""),
-    backgroundImage: "linear-gradient(#ff9e00 0%,#fbc2eb 100%)" ,
+    backgroundImage: "linear-gradient(#f4f269 0%,#5cb270 100%)" ,
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     padding: "20px",
     // borderRadius: "10px",
-    height: "100vh",
+    minHeight: "100vh",
     // margin:"0",
   };
   
@@ -26,31 +26,30 @@ export const appStyle = {
   export const buttonStyle = {
     margin: "1em 0.5em",
     fontSize: "0.9em",
+    padding: "0.5em 2em",
     borderRadius: "20px",
     border: "none",
     fontFamily: "'Segoe UI', Tahoma, Geneva , Verdana, sans-serif",
-    backgroundColor: "#ffffff70",
-    color: "#242424",
-    fontSize: "15px",
-    fontWeight: "bold",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    height: "38px",
-    width: "40px",
-    top: "-2px",
-    color: "#242424",
+    backgroundColor: "#4CAF50",
+    color: "#fff",
+    fontWeight: "500",
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+    transition: "0.3s",
     cursor: "pointer",
-    // paddingLeft:"12px"
+    whiteSpace: "normal",
+    wordWrap: "break-word",
   };
   
   export const customButtonStyle = {
-   
     width: "70px",
     height: "30px",
     fontSize: "14px",
-    backgroundColor: "#ffffff20",
-    // border: "1px sodlid #000",
-    // borderRadius: "25px"
-    // paddingLeft: "12px"
+    backgroundColor: "#4CAF50",
+    color: "#fff",
+    border: "none",
+    borderRadius: "20px",
+    cursor: "pointer",
+    transition: "0.3s",
   };
   
   export const taskStyles = {
