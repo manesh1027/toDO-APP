@@ -12,7 +12,7 @@ const Task = ({ task, index, completeTask, removeTask }) => {
       </span>
       <div>
         <Button
-          text={task.completed ? <i className="fas fa-undo"></i> : <i className="fas fa-check"></i>$ git remote -v
+          text={task.completed ? <i className="fas fa-undo"></i> : <i className="fas fa-check"></i>
           }
           onClick={() => completeTask(index)}
         />
